@@ -41,12 +41,12 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 12 }}
         volumeMounts:
-        - name: config-volume
-          mountPath: /opt/config/application.properties
-      volumes:
       - name: config-volume
+        mountPath: /opt/config/application.properties
+        volumes:
+        - name: config-volume
           configMap:
-          # Provide the name of the ConfigMap containing the files you want
-          # to add to the container
-          name: spring-config
+            # Provide the name of the ConfigMap containing the files you want
+            # to add to the container
+            name: spring-config
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
