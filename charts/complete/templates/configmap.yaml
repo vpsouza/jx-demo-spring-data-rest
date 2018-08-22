@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: spring-config
 data:
-  spring.datasource.url: jdbc:postgresql://{{ .Release.Name }}-postgres:5432/postgres
+  application.properties: |-
+    spring.datasource.url=jdbc:postgresql://{{ .Release.Name }}-postgres:5432/postgres

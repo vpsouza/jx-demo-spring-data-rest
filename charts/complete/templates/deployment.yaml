@@ -42,7 +42,7 @@ spec:
 {{ toYaml .Values.resources | indent 12 }}
         volumeMounts:
         - name: config-volume
-          mountPath: /opt/config/application.properties
+          mountPath: /opt/config
       volumes:
       - name: config-volume
         configMap:
