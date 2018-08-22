@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: spring-volume
 data:
-  spring.datasource.url: jdbc:postgresql://{{ template "fullname" . }}:5432/postgres
+  spring.datasource.url: jdbc:postgresql://{{ .Release.Name }}-postgres:5432/postgres
